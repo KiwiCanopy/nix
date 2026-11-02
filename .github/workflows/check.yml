@@ -5,6 +5,14 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+  # update-lock.yml runs these checks on its branch before it opens a
+  # PR, since a PR opened with the workflow token triggers no CI.
+  workflow_call:
+    inputs:
+      ref:
+        description: Branch to check out and check
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -15,6 +23,8 @@ jobs:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref || '' }}
 
       - uses: cachix/install-nix-action@v31
 
