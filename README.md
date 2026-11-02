@@ -67,7 +67,8 @@ contents of `~/.config/KiwiDesk`.
 
 ### License
 
-KiwiDesk is licensed under BSL 1.1, which nixpkgs counts as unfree.
+The Nix expressions in this repository are [MIT](LICENSE).
+KiwiDesk itself is licensed under BSL 1.1, which nixpkgs counts as unfree.
 This flake allows exactly its own packages. If you take the package
 from the overlay into your own nixpkgs instead, allow it there:
 
