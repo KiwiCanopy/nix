@@ -1,6 +1,12 @@
+<div align="center">
+
+<img src="https://kiwicanopy.com/brand/icon-512.png" alt="KiwiCanopy" width="96">
+
 # KiwiCanopy Nix flake
 
-Nix packages and Home Manager modules for KiwiCanopy apps. Each
+</div>
+
+Nix packages and Home Manager modules for [KiwiCanopy](https://kiwicanopy.com) apps. Each
 package repackages the app's signed, notarized release as it ships.
 Nothing is built from source, so the code signature, and with it
 macOS's Accessibility grant, survives every update.
@@ -18,7 +24,7 @@ Apple silicon Macs only (`aarch64-darwin`).
   inputs.kiwicanopy.url = "github:KiwiCanopy/nix";
 
   # in your Home Manager configuration:
-  imports = [ inputs.kiwicanopy.homeManagerModules.kiwidesk ];
+  imports = [ inputs.kiwicanopy.homeModules.kiwidesk ];
 
   targets.darwin.copyApps.enable = true; # the default from stateVersion 25.11
   programs.kiwidesk = {

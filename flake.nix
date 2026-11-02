@@ -33,10 +33,12 @@
         default = pkgs.kiwidesk;
       });
 
-      homeManagerModules = {
+      homeModules = {
         kiwidesk = import ./modules/home-manager/kiwidesk.nix self;
-        default = self.homeManagerModules.kiwidesk;
+        default = self.homeModules.kiwidesk;
       };
+      # The older name many configurations still import.
+      homeManagerModules = self.homeModules;
 
       checks = forAll (pkgs: {
         inherit (pkgs) kiwidesk;

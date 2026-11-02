@@ -13,7 +13,7 @@ let
   conf = hm.lib.homeManagerConfiguration {
     inherit pkgs;
     modules = [
-      self.homeManagerModules.kiwidesk
+      self.homeModules.kiwidesk
       {
         home.username = \"ci\";
         home.homeDirectory = \"/Users/ci\";
